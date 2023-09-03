@@ -1,5 +1,6 @@
+use inputs::get_input;
 fn main() {
-    let day1a_input:&str = include_str!("day1a_input.txt");
+    let day1a_input:String = get_input("day1.txt").unwrap();
     let lines: Vec<String> = day1a_input
     .split("\n\n").map(|x: &str| x.to_string()).collect();
 
