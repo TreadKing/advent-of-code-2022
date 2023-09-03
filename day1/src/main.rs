@@ -5,10 +5,16 @@ fn main() {
 
     let calories: Vec<Vec<i32>> = lines.iter().map(split_lines).collect();
 
-    let elfs: Vec<i32> = calories.iter().map(|elf| elf.iter().sum()).collect();
+    let mut elfs: Vec<i32> = calories.iter().map(|elf| elf.iter().sum()).collect();
+    elfs.sort();
+    elfs.reverse();
 
     let max_cal = elfs.iter().max().unwrap();
     println!("max calories:{}", max_cal);
+
+    let top_3: &i32 = &elfs[0..3].iter().sum();
+    println!("top 3 calories: {}", top_3);
+
 }
 
 pub fn split_lines(input_str: &String) -> Vec<i32> {
