@@ -1,7 +1,6 @@
-use inputs::get_input;
 fn main() {
-    let day1a_input:String = get_input("day1.txt").unwrap();
-    let lines: Vec<String> = day1a_input
+    let day1_input = include_str!("day1_input.txt");
+    let lines: Vec<String> = day1_input
     .split("\n\n").map(|x: &str| x.to_string()).collect();
 
     let calories: Vec<Vec<i32>> = lines.iter().map(split_lines).collect();
